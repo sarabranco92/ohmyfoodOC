@@ -1,0 +1,256 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background: #f6f6f6;
+}
+
+* a {
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63px;
+  width: 100%;
+}
+.header .logo {
+  font-family: "Shrikhand", cursive;
+  margin: 0;
+  color: black;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EAEAEA;
+  color: #353535;
+}
+.location-text {
+  margin-left: 13px;
+  font-weight: 500;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center {
+  background: #fafafa;
+  width: 100%;
+}
+.center-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+}
+.center-title {
+  text-align: center;
+  max-width: 375px;
+  margin: 0;
+}
+.center-text {
+  text-align: center;
+  padding-left: 20px;
+}
+.center-button {
+  opacity: 1;
+  background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  color: white;
+  padding: 0 20px;
+  border-radius: 200px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.center-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+.fonction-contain {
+  padding: 25px 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fonction {
+  width: 95%;
+  max-width: 1200px;
+  background-color: white;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.fonction-title {
+  margin: 0;
+  padding: 20px;
+}
+.fonction-text {
+  font-weight: 500;
+}
+.fonction-step {
+  display: flex;
+  align-items: center;
+  background: #f6f6f6;
+  height: auto;
+  width: auto;
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+}
+.fonction-step:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  background: white;
+}
+.fonction-number {
+  background-color: #9356DC;
+  color: white;
+  position: absolute;
+  padding: 3px 8px 3px 8px;
+  border-radius: 500px;
+  transform: translateX(-80%);
+}
+.fonction-icon {
+  color: #7E7E7E;
+  margin: 0 20px;
+}
+.fonction-steps {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.restaurants {
+  margin: 0;
+  background: #f6f6f6;
+  padding: 18px;
+  max-width: 1200px;
+  flex-direction: column;
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border-radius: 20px;
+  transform: scale(1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.restaurant-card-nouveau {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #99e2d0;
+  top: 20px;
+  right: 20px;
+}
+.restaurant-card-nouveau p {
+  color: #1b6150;
+  padding: 10px 20px;
+  margin: 0;
+}
+.restaurant-card-image {
+  width: 100%;
+  height: 190px;
+}
+.restaurant-card-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.restaurant-legend {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  border-radius: 0 0 20px 20px;
+}
+.restaurant-legend-info {
+  color: black;
+  margin-left: 20px;
+}
+.restaurant-legend-info > :first-child {
+  font-weight: 700;
+}
+.restaurant-heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 30px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #353535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-total {
+  display: inline;
+  padding: 22px 25px 22px 25px;
+  width: 100%;
+  max-width: 1200px;
+}
+.footer-total .logo {
+  font-family: "Shrikhand", cursive;
+  color: white;
+  font-size: 20px;
+  padding: 15px 0;
+}
+.footer-total-links {
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+}
+.footer-total-link {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+}
+.footer-total-link i {
+  margin-right: 7px;
+}
+.footer-total-link .footer-title {
+  font-size: 16px;
+  font-weight: 500;
+}/*# sourceMappingURL=main.css.map */
