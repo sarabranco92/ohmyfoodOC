@@ -1,8 +1,8 @@
 @mixin button-hover {
-    opacity: 0.8;
+    opacity: 0.5;
     cursor: pointer;
-    transition: .3s;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+    transition: all .5s ease;
+    box-shadow: $box-shadow;
 }
 
 @mixin button-style {
@@ -11,24 +11,31 @@
     color: white;
     padding: 0 20px;
     border-radius: 200px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: $box-shadow;
+    transition: all .5s ease;
 }
 
-@mixin flexbox-center {
+@mixin flexbox($justify-content, $align-items, $flex-direction) {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $gradient : linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
+$box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.20);
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Shrikhand', cursive;
+
+
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-primary;
     margin: 0;
-    background: #f6f6f6;
+    background-color: #1b6150;
 }
 
 * a {
@@ -37,21 +44,21 @@ body {
 }
 
 .header {
-    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.20);
+    box-shadow: $box-shadow;
     position: relative;
-    @include flexbox-center();
+    @include flexbox;
     height: 63px;
     width: 100%;
 
     .logo {
-        font-family: 'Shrikhand', cursive;
+        font-family: $font-secondary;
         margin: 0;
         color: black;
     }
 }
 
 .location {
-    @include flexbox-center();
+    @include flexbox;
     background: #EAEAEA;
     color: #353535;
 
@@ -64,8 +71,7 @@ body {
 .main {
     margin: 0;
     padding: 0;
-    @include flexbox-center;
-    flex-direction: column;
+    @include flexbox;
 }
 
 .center {
@@ -74,8 +80,7 @@ body {
 
     &-container {
         width: 100%;
-        @include flexbox-center();
-        flex-direction: column;
+        @include flexbox;
         padding: 50px 0;
     }
 
@@ -103,8 +108,7 @@ body {
     padding: 25px 0;
     width: 100%;
     background: white;
-    @include flexbox-center;
-    flex-direction: column;
+    @include flexbox;
 }
 
 .fonction {
@@ -133,12 +137,9 @@ body {
         margin: 10px 20px;
         padding: 10px;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+        box-shadow: $box-shadow;
+        cursor: pointer;
 
-        &:hover {
-            @include button-hover;
-            background: lighten(#f7f7f7, 3%);
-        }
     }
 
     &-number {
@@ -156,9 +157,8 @@ body {
     }
 
     &-steps {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        @include flexbox;
+        margin: 100px;
     }
 }
 
@@ -176,21 +176,19 @@ body {
         display: flex;
         flex-direction: column;
         gap: 20px;
-     
+
     }
 
     &-card {
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flexbox;
         width: 100%;
         border-radius: 20px;
         transform: scale(1.0);
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 
         &-nouveau {
-            @include flexbox-center;
+            @include flexbox;
             position: absolute;
             background: #99e2d0;
             top: 20px;
@@ -203,7 +201,7 @@ body {
             }
         }
 
-     
+
 
         &-image {
             width: 100%;
@@ -241,12 +239,36 @@ body {
     }
 
     &-heart {
-        @include flexbox-center;
+        @include flexbox;
         margin-right: 20px;
         margin-bottom: 20px;
         width: 30px;
     }
 
+    .heart-solid {
+        @include heart;
+        background: $gradient;
+        opacity: 0;
+    }
+
+    .heart-light {
+        @include heart;
+        opacity: 1;
+    }
+
+
+    &-heart:hover {
+
+        &heart-solid {
+            opacity: 1;
+            transition: .3s ease-in-out;
+        }
+
+        &heart-light {
+            opacity: 0;
+            transition: .3s ease-in-out;
+        }
+    }
 
 }
 
@@ -256,23 +278,27 @@ body {
 .footer {
     width: 100%;
     background-color: #353535;
-    @include flexbox-center;
+    @include flexbox;
+
     &-total {
         display: inline;
         padding: 22px 25px 22px 25px;
         width: 100%;
         max-width: 1200px;
+
         & .logo {
             font-family: 'Shrikhand', cursive;
             color: white;
             font-size: 20px;
             padding: 15px 0;
         }
+
         &-links {
             display: inline-flex;
             flex-direction: column;
             width: auto;
         }
+
         &-link {
             display: inline-flex;
             align-items: center;
@@ -283,8 +309,9 @@ body {
             cursor: pointer;
 
             & i {
-             margin-right: 7px;
+                margin-right: 7px;
             }
+
             & .footer-title {
                 font-size: 16px;
                 font-weight: 500;
