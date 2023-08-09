@@ -1,3 +1,12 @@
+
+    @mixin heart ($bottom: 25px){
+        font-size: 1.5rem;
+        position:absolute;
+        right: 25px;
+        bottom: $bottom;
+    }
+
+
 @mixin button-hover {
     opacity: 0.5;
     cursor: pointer;
@@ -15,11 +24,12 @@
     transition: all .5s ease;
 }
 
-@mixin flexbox($justify-content, $align-items, $flex-direction) {
+@mixin flexbox ($justify-content:center, $align-items:center, $flex-direction:column, $gap:0px) {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content:$justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+    gap:$gap;
 }
 
 $color-primary: #9356DC;
@@ -31,11 +41,10 @@ $font-primary: 'Roboto', sans-serif;
 $font-secondary: 'Shrikhand', cursive;
 
 
-
 body {
     font-family: $font-primary;
     margin: 0;
-    background-color: #1b6150;
+    background: #f6f6f6;
 }
 
 * a {
@@ -46,7 +55,7 @@ body {
 .header {
     box-shadow: $box-shadow;
     position: relative;
-    @include flexbox;
+    @include flexbox (center,center, column);
     height: 63px;
     width: 100%;
 
@@ -58,7 +67,7 @@ body {
 }
 
 .location {
-    @include flexbox;
+    @include flexbox (center,center, row);
     background: #EAEAEA;
     color: #353535;
 
@@ -71,7 +80,7 @@ body {
 .main {
     margin: 0;
     padding: 0;
-    @include flexbox;
+    @include flexbox (center,center, column);
 }
 
 .center {
@@ -80,7 +89,7 @@ body {
 
     &-container {
         width: 100%;
-        @include flexbox;
+        @include flexbox (center,center, column);
         padding: 50px 0;
     }
 
@@ -108,7 +117,7 @@ body {
     padding: 25px 0;
     width: 100%;
     background: white;
-    @include flexbox;
+    @include flexbox (center,center, column);
 }
 
 .fonction {
@@ -157,8 +166,7 @@ body {
     }
 
     &-steps {
-        @include flexbox;
-        margin: 100px;
+        @include flexbox (center,0, column);
     }
 }
 
@@ -181,14 +189,14 @@ body {
 
     &-card {
 
-        @include flexbox;
+        @include flexbox (center,center, column);
         width: 100%;
         border-radius: 20px;
         transform: scale(1.0);
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 
         &-nouveau {
-            @include flexbox;
+            @include flexbox (center,center, column);
             position: absolute;
             background: #99e2d0;
             top: 20px;
@@ -239,10 +247,11 @@ body {
     }
 
     &-heart {
-        @include flexbox;
+        @include flexbox (center,center, column);
         margin-right: 20px;
         margin-bottom: 20px;
         width: 30px;
+        color: black;
     }
 
     .heart-solid {
@@ -278,7 +287,7 @@ body {
 .footer {
     width: 100%;
     background-color: #353535;
-    @include flexbox;
+    @include flexbox (center,0, column);
 
     &-total {
         display: inline;
@@ -318,4 +327,5 @@ body {
             }
         }
     }
+}
 }
