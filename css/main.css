@@ -15,6 +15,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 0px;
   height: 63px;
   width: 100%;
 }
@@ -28,6 +30,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  gap: 0px;
   background: #EAEAEA;
   color: #353535;
 }
@@ -43,6 +47,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 0px;
 }
 
 .center {
@@ -55,6 +60,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 0px;
   padding: 50px 0;
 }
 .center-title {
@@ -72,13 +78,14 @@ body {
   color: white;
   padding: 0 20px;
   border-radius: 200px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
 }
 .center-button:hover {
-  opacity: 0.8;
+  opacity: 0.5;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease;
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 .fonction-contain {
@@ -89,6 +96,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 0px;
 }
 
 .fonction {
@@ -115,14 +123,8 @@ body {
   margin: 10px 20px;
   padding: 10px;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
-}
-.fonction-step:hover {
-  opacity: 0.8;
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-  background: white;
 }
 .fonction-number {
   background-color: #9356DC;
@@ -139,7 +141,9 @@ body {
 .fonction-steps {
   display: flex;
   justify-content: center;
+  align-items: 0;
   flex-direction: column;
+  gap: 0px;
 }
 
 .restaurants {
@@ -157,8 +161,10 @@ body {
 }
 .restaurant-card {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
   width: 100%;
   border-radius: 20px;
   transform: scale(1);
@@ -168,6 +174,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 0px;
   position: absolute;
   background: #99e2d0;
   top: 20px;
@@ -209,9 +217,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 0px;
   margin-right: 20px;
   margin-bottom: 20px;
   width: 30px;
+  color: black;
+}
+.restaurant .heart-solid {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  opacity: 0;
+}
+.restaurant .heart-light {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  opacity: 1;
+}
+.restaurant-heart:hoverheart-solid {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+.restaurant-heart:hoverheart-light {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
 }
 
 .footer {
@@ -219,7 +253,9 @@ body {
   background-color: #353535;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: 0;
+  flex-direction: column;
+  gap: 0px;
 }
 .footer-total {
   display: inline;
@@ -253,4 +289,4 @@ body {
 .footer-total-link .footer-title {
   font-size: 16px;
   font-weight: 500;
-}/*# sourceMappingURL=main.css.map */
+}
