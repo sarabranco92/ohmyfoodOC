@@ -1,0 +1,300 @@
+
+    @mixin heart ($bottom: 25px){
+        font-size: 1.5rem;
+        position:absolute;
+        right: 25px;
+        bottom: $bottom;
+    }
+
+
+@mixin button-hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all .5s ease;
+    box-shadow: $box-shadow;
+}
+
+@mixin button-style {
+    opacity: 1;
+    background: $gradient;
+    color: white;
+    padding: 0 20px;
+    border-radius: 200px;
+    box-shadow: $box-shadow;
+    transition: all .5s ease;
+}
+
+@mixin flexbox ($justify-content:center, $align-items:center, $flex-direction:column, $gap:0px) {
+    display: flex;
+    justify-content:$justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+    gap:$gap;
+}
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$gradient : linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
+$box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.20);
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Shrikhand', cursive;
+
+
+body {
+    font-family: $font-primary;
+    margin: 0;
+    background: #f6f6f6;
+}
+
+* a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.header {
+    box-shadow: $box-shadow;
+    position: relative;
+    @include flexbox (center,center, column);
+    height: 63px;
+    width: 100%;
+
+    .logo {
+        font-family: $font-secondary;
+        margin: 0;
+        color: black;
+    }
+}
+
+.location {
+    @include flexbox (center,center, row);
+    background: #EAEAEA;
+    color: #353535;
+
+    &-text {
+        margin-left: 13px;
+        font-weight: 500;
+    }
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    @include flexbox (center,center, column);
+}
+
+.center {
+    background: #fafafa;
+    width: 100%;
+
+    &-container {
+        width: 100%;
+        @include flexbox (center,center, column);
+        padding: 50px 0;
+    }
+
+    &-title {
+        text-align: center;
+        max-width: 375px;
+        margin: 0;
+    }
+
+    &-text {
+        text-align: center;
+        padding-left: 20px;
+    }
+
+    &-button {
+        @include button-style;
+
+        &:hover {
+            @include button-hover;
+        }
+    }
+}
+
+.fonction-contain {
+    padding: 25px 0;
+    width: 100%;
+    background: white;
+    @include flexbox (center,center, column);
+}
+
+.fonction {
+    width: 95%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        margin: 0;
+        padding: 20px;
+    }
+
+    &-text {
+        font-weight: 500;
+    }
+
+    &-step {
+        display: flex;
+        align-items: center;
+        background: #f6f6f6;
+        height: auto;
+        width: auto;
+        margin: 10px 20px;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+
+    }
+
+    &-number {
+        background-color: $color-primary;
+        color: white;
+        position: absolute;
+        padding: 3px 8px 3px 8px;
+        border-radius: 500px;
+        transform: translateX(-80%);
+    }
+
+    &-icon {
+        color: #7E7E7E;
+        margin: 0 20px;
+    }
+
+    &-steps {
+        @include flexbox (center,0, column);
+    }
+}
+
+
+
+.restaurants {
+    margin: 0;
+    background: #f6f6f6;
+    padding: 18px;
+    max-width: 1200px;
+    flex-direction: column;
+}
+
+.restaurant {
+    &-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    &-card {
+
+        @include flexbox (center,center, column);
+        width: 100%;
+        border-radius: 20px;
+        transform: scale(1.0);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+
+        &-nouveau {
+            @include flexbox (center,center, column);
+            position: absolute;
+            background: #99e2d0;
+            top: 20px;
+            right: 20px;
+
+            & p {
+                color: #1b6150;
+                padding: 10px 20px;
+                margin: 0;
+            }
+        }
+
+
+
+        &-image {
+            width: 100%;
+            height: 190px;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+
+    }
+
+    &-legend {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 90px;
+        border-radius: 0 0 20px 20px;
+
+        &-info {
+            color: black;
+            margin-left: 20px;
+
+            &> :first-child {
+                font-weight: 700;
+            }
+        }
+
+
+    }
+
+
+
+
+.footer {
+    width: 100%;
+    background-color: #353535;
+    @include flexbox (center,0, column);
+
+    &-total {
+        display: inline;
+        padding: 22px 25px 22px 25px;
+        width: 100%;
+        max-width: 1200px;
+
+        & .logo {
+            font-family: 'Shrikhand', cursive;
+            color: white;
+            font-size: 20px;
+            padding: 15px 0;
+        }
+
+        &-links {
+            display: inline-flex;
+            flex-direction: column;
+            width: auto;
+        }
+
+        &-link {
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            color: white;
+            height: 30px;
+            cursor: pointer;
+
+            & i {
+                margin-right: 7px;
+            }
+
+            & .footer-title {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+}
