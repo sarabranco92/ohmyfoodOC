@@ -49,7 +49,7 @@ body {
 
 * a {
     text-decoration: none;
-    color: white;
+    
 }
 
 
@@ -149,8 +149,6 @@ body {
         padding: 10px;
         border-radius: 20px;
         box-shadow: $box-shadow;
-        cursor: pointer;
-
     }
 
     &-number {
@@ -249,9 +247,15 @@ body {
 
     }
 
+    .restaurant-heart {
+        color:$color-secondary;
+        background: -webkit-linear-gradient($color-primary 40%, $color-secondary 100%);
+        display: block;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-
-
+}
 .footer {
     width: 100%;
     background-color: #353535;
@@ -297,4 +301,3 @@ body {
     }
 }
 
-}
