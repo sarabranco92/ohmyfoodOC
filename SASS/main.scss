@@ -1,5 +1,4 @@
-
-    @mixin heart ($bottom: 25px){
+   @mixin heart ($bottom: 25px){
         font-size: 1.5rem;
         position:absolute;
         right: 25px;
@@ -49,8 +48,10 @@ body {
 
 * a {
     text-decoration: none;
-    color: white;
+    
 }
+
+
 
 .header {
     box-shadow: $box-shadow;
@@ -147,8 +148,6 @@ body {
         padding: 10px;
         border-radius: 20px;
         box-shadow: $box-shadow;
-        cursor: pointer;
-
     }
 
     &-number {
@@ -169,6 +168,7 @@ body {
         @include flexbox (center,0, column);
     }
 }
+
 
 
 .restaurants {
@@ -246,44 +246,15 @@ body {
 
     }
 
-    &-heart {
-        @include flexbox (center,center, column);
-        margin-right: 20px;
-        margin-bottom: 20px;
-        width: 30px;
-        color: black;
-    }
-
-    .heart-solid {
-        @include heart;
-        background: $gradient;
-        opacity: 0;
-    }
-
-    .heart-light {
-        @include heart;
-        opacity: 1;
-    }
-
-
-    &-heart:hover {
-
-        &heart-solid {
-            opacity: 1;
-            transition: .3s ease-in-out;
-        }
-
-        &heart-light {
-            opacity: 0;
-            transition: .3s ease-in-out;
-        }
+    .restaurant-heart {
+        color:$color-secondary;
+        background: -webkit-linear-gradient($color-primary 40%, $color-secondary 100%);
+        display: block;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
 }
-
-
-
-
 .footer {
     width: 100%;
     background-color: #353535;
@@ -328,4 +299,4 @@ body {
         }
     }
 }
-}
+
