@@ -1,0 +1,32 @@
+
+.header {
+    box-shadow: $box-shadow;
+    position: relative;
+    @include flexbox (center, center, column);
+    height: 63px;
+    width: 100%;
+
+    .logo {
+        font-family: $font-secondary;
+        margin: 0;
+        color: black;
+    }
+
+    
+
+.back-arrow {
+	position: absolute;
+	bottom: 1.25rem;
+	left: 1.25rem;
+	color: #353535;
+	transition: opacity 300ms ease-in-out, transform 200ms ease-in-out;
+	font-size: 125%;
+	&:hover {
+		opacity: 0.6;
+		transform: scaleX(1.1);
+	}
+
+}
+
+}
+

@@ -1,11 +1,11 @@
 
 
-@mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: column, $gap: 0px) {
+@mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: column, $flex-wrap:wrap) {
     display: flex;
     justify-content: $justify-content;
     align-items: $align-items;
     flex-direction: $flex-direction;
-    gap: $gap;
+    flex-wrap: $flex-wrap;
 }
 
 @mixin button-style {
@@ -16,7 +16,7 @@
     border-radius: 200px;
     box-shadow: $box-shadow;
     transition-timing-function:ease-out;
-    transition-duration: 0.8s;
+    transition-duration: 0.8s; 
 }
 
 @mixin button-hover {
@@ -25,4 +25,64 @@
     box-shadow: $box-shadow;
     font-weight: 300;
 }
+
+
+
+@mixin flex-wrap-space-between {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* Restaurant Menu*/
+
+@mixin ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+@mixin font-menu-card-title ($font-family: 'Roboto', $font-weight:500, $font-size:16px)
+{
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}
+
+@mixin font-menu-card-subtitle ($font-family: 'Roboto', $font-weight:300, $font-size:14px)
+{
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}
+
+@mixin font-menu-card-price ($font-family: 'Roboto', $font-weight:700, $font-size:15px, $color:#353535)
+{
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $color
+}
+
+@mixin tablet-breakpoint {
+	@media screen and (min-width: map-get($breakpoints, tablet)) {
+		@content;
+	}
+}
+
+
+@mixin desktop-breakpoint {
+	@media screen and (min-width: map-get($breakpoints, desktop)) {
+		@content;
+	}
+}
+
+
+@mixin big-desktop-breakpoint {
+	@media screen and (min-width: map-get($breakpoints, big-desktop)) {
+		@content;
+	}
+}
+
 
