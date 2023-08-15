@@ -38,9 +38,7 @@
 
     .card-menu {
         overflow: hidden;
-        @include tablet-breakpoint {
-            width: 100%;
-        }
+
 
 &-container{
 margin-bottom: 40px;
@@ -53,13 +51,13 @@ margin-bottom: 40px;
         }
 
         &-title {
-           @include font-menu-card-title;
+            @include font-menu-card ('Roboto', 500, 16px);;
             @include ellipsis;
             margin: 0;
         }
 
         &-subtitle {
-            @include font-menu-card-subtitle;
+            @include font-menu-card ('Roboto', 300, 14px);
             @include ellipsis;
             margin: 0;
         }
@@ -104,9 +102,6 @@ margin-bottom: 40px;
                 &-legend {
                     width: 65%;
 
-                    @include desktop-breakpoint {
-                        width: 70%;
-                    }
                 }
 
                 &-price-container {

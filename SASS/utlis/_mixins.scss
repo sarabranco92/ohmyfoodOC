@@ -1,5 +1,4 @@
 
-
 @mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: column, $flex-wrap:wrap) {
     display: flex;
     justify-content: $justify-content;
@@ -7,6 +6,8 @@
     flex-direction: $flex-direction;
     flex-wrap: $flex-wrap;
 }
+
+
 
 @mixin button-style {
     opacity: 1;
@@ -27,13 +28,6 @@
 }
 
 
-
-@mixin flex-wrap-space-between {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
 /* Restaurant Menu*/
 
 @mixin ellipsis {
@@ -43,14 +37,7 @@
 }
 
 
-@mixin font-menu-card-title ($font-family: 'Roboto', $font-weight:500, $font-size:16px)
-{
-    font-family: $font-family;
-    font-weight: $font-weight;
-    font-size: $font-size;
-}
-
-@mixin font-menu-card-subtitle ($font-family: 'Roboto', $font-weight:300, $font-size:14px)
+@mixin font-menu-card ($font-family: 'Roboto', $font-weight:300, $font-size:14px)
 {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -64,25 +51,4 @@
     font-size: $font-size;
     color: $color
 }
-
-@mixin tablet-breakpoint {
-	@media screen and (min-width: map-get($breakpoints, tablet)) {
-		@content;
-	}
-}
-
-
-@mixin desktop-breakpoint {
-	@media screen and (min-width: map-get($breakpoints, desktop)) {
-		@content;
-	}
-}
-
-
-@mixin big-desktop-breakpoint {
-	@media screen and (min-width: map-get($breakpoints, big-desktop)) {
-		@content;
-	}
-}
-
 
