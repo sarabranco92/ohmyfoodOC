@@ -7,3 +7,19 @@ $box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.20);
 $font-primary: 'Roboto', sans-serif;
 $font-secondary: 'Shrikhand', italic;
 
+
+/*------------------------1vw = 1% of viewport width.
+
+$font-size: (
+	mobile: 4vw,
+	tablet: 2vw,
+	desktop: 16px,
+);
+
+*/
+
+
+$breakpoints: (
+	tablet: 768px,
+	desktop: 1200px,
+);

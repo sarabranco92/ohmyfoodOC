@@ -31,7 +31,6 @@
         /* Force les majuscules */
         border-bottom: 3px solid $color-tertiary;
         width: 48px;
-        margin: 16p 0;
         padding-bottom: 5px;
     }
 
@@ -51,7 +50,7 @@ margin-bottom: 40px;
         }
 
         &-title {
-            @include font-menu-card ('Roboto', 500, 16px);;
+            @include font-menu-card ('Roboto', 500, 16px);
             @include ellipsis;
             margin: 0;
         }

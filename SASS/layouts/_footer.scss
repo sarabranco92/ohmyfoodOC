@@ -5,6 +5,7 @@
 
     & a {
         color: white;
+        
     }
 
     &-total {
@@ -12,6 +13,7 @@
         padding: 22px 25px 22px 25px;
         width: 100%;
         max-width: 1200px;
+
 
         & .logo {
             @include font-menu-card ('shrikhand', 400, 20px);
@@ -23,6 +25,14 @@
             display: inline-flex;
             flex-direction: column;
             width: auto;
+        
+        @include tablet-breakpoint {
+            @include flexbox(space-around, center, row);
+        }
+    
+        @include desktop-breakpoint {
+            @include flexbox(space-around, center, row);
+        }
         }
 
         &-link {
@@ -42,6 +52,17 @@
                 font-size: 16px;
                 font-weight: 400;
             }
+            @include tablet-breakpoint {
+                margin-left: 35px;
+                }
+        }
+        @include tablet-breakpoint {
+            @include flexbox(space-between,center,row-reverse);
+        }
+    
+        @include desktop-breakpoint {
+            @include flexbox(space-between,center,row-reverse);
         }
     }
+
 }

@@ -4,7 +4,6 @@
 @import "./layouts/header";
 @import "./layouts/restaurant";
 @import "./layouts/footer";
-@import "./utlis/breakpoints";
 @import "./utlis/keyframes";
 
 
@@ -15,18 +14,22 @@ body {
     font-family: $font-primary;
     margin: 0 auto;
     background: #f6f6f6;
-    box-sizing: border-box;
-    max-width: 1440px;
 
 }
+
+/*
+html {
+	@include main-typography;
+}
+*/
 
 * a {
     text-decoration: none;
 }
 
 h1 {
-    font-family: $font-secondary;
     font-weight: 400;
+
 }
 
 
@@ -37,8 +40,7 @@ img {
 }
 
 .main {
-    margin: 0;
-    padding: 0;
+ 
     @include flexbox (center, center, column);
 }
 
@@ -62,7 +64,7 @@ img {
 
     &-container {
         width: 100%;
-        @include flexbox (center, center, column);
+        @include flexbox (center, center,column);
         padding: 50px 0;
     }
 
@@ -85,7 +87,7 @@ img {
         @include button-style;
 
         &:hover,
-        &:focus {
+        &:active {
             @include button-hover;
         }
     }
@@ -154,7 +156,9 @@ img {
     }
 
     &-steps {
-        @include flexbox (center, 0, column);
+        @include tablet-breakpoint {
+			@include flexbox(space-between,0,row);
+		}
        
     }
 }

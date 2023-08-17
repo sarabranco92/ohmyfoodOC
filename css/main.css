@@ -1,4 +1,33 @@
+/* changer les size pour les breakpoints
+
+@mixin main-typography {
+	font-family: "Roboto", serif;
+	font-size: map-get($font-size, mobile);
+	@include tablet-breakpoint {
+		font-size: map-get($font-size, tablet);
+	}
+	@include desktop-breakpoint {
+		font-size: map-get($font-size, desktop);
+	}
+}
+
+@mixin title-typography {
+	font-family: "Shrikhand", serif;
+}
+
+
+
+/*breakpoints*/
 /* Restaurant Menu*/
+/*------------------------1vw = 1% of viewport width.
+
+$font-size: (
+	mobile: 4vw,
+	tablet: 2vw,
+	desktop: 16px,
+);
+
+*/
 .img-restaurant img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -29,7 +58,6 @@
   /* Force les majuscules */
   border-bottom: 3px solid #99E2D0;
   width: 48px;
-  margin: 16p 0;
   padding-bottom: 5px;
 }
 .restaurant-menu .card-menu {
@@ -142,12 +170,8 @@
 }
 
 .restaurants {
-  margin: 0;
   background: #f6f6f6;
   padding: 18px;
-  max-width: 1200px;
-  flex-direction: column;
-  display: flex;
 }
 .restaurants-title {
   font-family: "Roboto";
@@ -155,16 +179,33 @@
   font-size: 24px;
 }
 
-.restaurant-cards {
-  display: flex;
-  flex-direction: column;
+@media (min-width: 768px) {
+  .restaurant-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 .restaurant-card {
   width: 100%;
   border-radius: 20px;
-  transform: scale(1);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  transition: transform 300ms ease-out;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .restaurant-card {
+    width: 49%;
+    position: sticky;
+  }
+}
+@media (min-width: 1200px) {
+  .restaurant-card {
+    width: 49%;
+  }
 }
 .restaurant-card-nouveau {
   display: flex;
@@ -201,7 +242,6 @@
   width: 100%;
   height: 80px;
   border-radius: 0 0 20px 20px;
-  padding: 0;
 }
 .restaurant-legend-info {
   color: black;
@@ -233,17 +273,8 @@
   transform: scale(0);
   transition: transform 300ms;
 }
-.heart:hover {
-  cursor: pointer;
-}
 .heart:hover .heart-full {
   transform: scale(1);
-}
-.heart:hover .heart-empty {
-  background: linear-gradient(#9356DC 0%, #FF79DA 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
 }
 
 /* ----------------------------------------------------------------------------------------------*/
@@ -277,6 +308,24 @@
   flex-direction: column;
   width: auto;
 }
+@media (min-width: 768px) {
+  .footer-total-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-total-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .footer-total-link {
   display: inline-flex;
   align-items: center;
@@ -293,21 +342,46 @@
   font-size: 16px;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .footer-total-link {
+    margin-left: 35px;
+  }
+}
+@media (min-width: 768px) {
+  .footer-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+}
 
 body {
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
   background: #f6f6f6;
-  box-sizing: border-box;
-  max-width: 1440px;
 }
 
+/*
+html {
+	@include main-typography;
+}
+*/
 * a {
   text-decoration: none;
 }
 
 h1 {
-  font-family: "Shrikhand", italic;
   font-weight: 400;
 }
 
@@ -317,8 +391,6 @@ img {
 }
 
 .main {
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -381,7 +453,7 @@ img {
 .center-button a {
   color: white;
 }
-.center-button:hover, .center-button:focus {
+.center-button:hover, .center-button:active {
   opacity: 0.7;
   cursor: pointer;
   box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
@@ -453,23 +525,7 @@ img {
   color: #7E7E7E;
   margin: 0 20px;
 }
-.fonction-steps {
-  display: flex;
-  justify-content: center;
-  align-items: 0;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
 @media (min-width: 768px) {
-  .fonction-steps {
-    display: flex;
-    justify-content: space-between;
-    align-items: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-@media (min-width: 1200px) {
   .fonction-steps {
     display: flex;
     justify-content: space-between;
