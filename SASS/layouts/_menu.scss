@@ -7,15 +7,34 @@
 
 .restaurant-menu {
     background-color: #f6f6f6;
+    @include tablet-breakpoint {
+        background-color: white;
+    }
+
+    @include desktop-breakpoint {
+        background-color: white;
+    }
+
 
     &-container {
         background-color: #f6f6f6;
         position: relative;
         margin-top: -64px;
         /* Monte le menu sur l'image */
-        padding: 32px 12px 64px 20px;
+        padding: 32px 12px 30px 20px;
         border-radius: 32px 32px 0 0;
         box-shadow: $box-shadow;
+
+        @include tablet-breakpoint {
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+    
+        @include desktop-breakpoint {
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+
     }
 
     &-title {
