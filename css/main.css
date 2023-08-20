@@ -48,6 +48,11 @@ $font-size: (
   }
 }
 .restaurant-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #f6f6f6;
   position: relative;
   margin-top: -64px;
@@ -70,7 +75,10 @@ $font-size: (
 }
 .restaurant-menu-title {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-family: "Shrikhand", italic;
   font-size: 28px;
 }
@@ -82,6 +90,37 @@ $font-size: (
   width: 48px;
   padding-bottom: 5px;
 }
+.restaurant-menu .heart {
+  margin-left: 20px;
+}
+@media (min-width: 768px) {
+  .restaurant-menu .entrees {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1200px) {
+  .restaurant-menu .entrees {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) {
+  .restaurant-menu .restaurant-card {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .restaurant-menu .restaurant-card {
+    width: 100%;
+  }
+}
 .restaurant-menu .card-menu {
   overflow: hidden;
 }
@@ -90,7 +129,7 @@ $font-size: (
 }
 .restaurant-menu .card-menu-legend {
   padding: 12px;
-  width: 80%;
+  width: 100%;
   transition: width 500ms 100ms ease-in-out;
   margin: 0;
 }
@@ -210,6 +249,15 @@ $font-size: (
     flex-wrap: wrap;
   }
 }
+@media (min-width: 1200px) {
+  .restaurant-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .restaurant-card {
   width: 100%;
   border-radius: 20px;
@@ -227,6 +275,7 @@ $font-size: (
 @media (min-width: 1200px) {
   .restaurant-card {
     width: 49%;
+    position: sticky;
   }
 }
 .restaurant-card-nouveau {

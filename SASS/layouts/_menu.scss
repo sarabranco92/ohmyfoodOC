@@ -5,8 +5,10 @@
     }
 }
 
+
 .restaurant-menu {
     background-color: #f6f6f6;
+
     @include tablet-breakpoint {
         background-color: white;
     }
@@ -16,7 +18,9 @@
     }
 
 
+
     &-container {
+        @include flexbox (center, center, column);
         background-color: #f6f6f6;
         position: relative;
         margin-top: -64px;
@@ -29,7 +33,7 @@
             margin-left: 35px;
             margin-right: 35px;
         }
-    
+
         @include desktop-breakpoint {
             margin-left: 35px;
             margin-right: 35px;
@@ -38,8 +42,7 @@
     }
 
     &-title {
-        display: flex;
-        justify-content: space-between;
+        @include flexbox (center, center, row);
         font-family: $font-secondary;
         font-size: 28px;
     }
@@ -53,17 +56,43 @@
         padding-bottom: 5px;
     }
 
+    .heart {
+        margin-left: 20px;
+    }
+
+
+    .entrees {
+        @include tablet-breakpoint {
+            @include flexbox(space-between, stretch, column);
+        }
+
+        @include desktop-breakpoint {
+            @include flexbox(space-between, stretch, column);
+        }
+
+    }
+
+    .restaurant-card {
+        @include tablet-breakpoint {
+            width: 100%;
+
+        }
+
+        @include desktop-breakpoint {
+            width: 100%;
+        }
+    }
 
     .card-menu {
         overflow: hidden;
 
+        &-container {
+            margin-bottom: 40px;
+        }
 
-&-container{
-margin-bottom: 40px;
-}
         &-legend {
             padding: 12px;
-            width: 80%;
+            width: 100%;
             transition: width 500ms 100ms ease-in-out;
             margin: 0;
         }
@@ -135,9 +164,9 @@ margin-bottom: 40px;
 
 }
 
-.center-container{
-    .commander{
-       padding: 0 50px ;
-    
+.center-container {
+    .commander {
+        padding: 0 50px;
+
     }
 }
