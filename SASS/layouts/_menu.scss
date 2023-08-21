@@ -1,8 +1,21 @@
 .img-restaurant {
     img {
         object-fit: cover;
-        height: 296px;
+        height: 383px;
     }
+}
+
+
+.animation1 {
+	@include menu-appear;
+}
+
+.animation2 {
+	@include menu-appear(1500ms);
+}
+
+.animation3 {
+	@include menu-appear(3000ms);
 }
 
 
@@ -17,33 +30,34 @@
         background-color: white;
     }
 
-
-
     &-container {
-        @include flexbox (center, center, column);
+        @include flexbox (center, normal, column);
         background-color: #f6f6f6;
         position: relative;
-        margin-top: -64px;
+        margin-top: -40px;
         /* Monte le menu sur l'image */
         padding: 32px 12px 30px 20px;
         border-radius: 32px 32px 0 0;
         box-shadow: $box-shadow;
+        
 
         @include tablet-breakpoint {
-            margin-left: 35px;
-            margin-right: 35px;
+            margin-left: 100px;
+            margin-right: 100px;
+            @include flexbox (center, center, column);
         }
 
         @include desktop-breakpoint {
-            margin-left: 35px;
-            margin-right: 35px;
+            margin-left: 100px;
+            margin-right: 100px;
+            @include flexbox (center, center, column);
         }
 
     }
 
     &-title {
         @include flexbox (center, center, row);
-        font-family: $font-secondary;
+        @include font-menu-card ('shrikhand', 400, 28px);
         font-size: 28px;
     }
 
@@ -54,6 +68,7 @@
         border-bottom: 3px solid $color-tertiary;
         width: 48px;
         padding-bottom: 5px;
+        @include font-menu-card ('roboto', 300, 16px);
     }
 
     .heart {
@@ -61,13 +76,15 @@
     }
 
 
-    .entrees {
-        @include tablet-breakpoint {
+    .menu-animation {
+             @include tablet-breakpoint {
             @include flexbox(space-between, stretch, column);
+            width: 80%;
         }
 
         @include desktop-breakpoint {
             @include flexbox(space-between, stretch, column);
+            width: 70%;
         }
 
     }
@@ -92,21 +109,22 @@
 
         &-legend {
             padding: 12px;
-            width: 100%;
+           
             transition: width 500ms 100ms ease-in-out;
             margin: 0;
         }
 
         &-title {
-            @include font-menu-card ('Roboto', 500, 16px);
+            @include font-menu-card ('Roboto', 500, 18px);
             @include ellipsis;
             margin: 0;
         }
 
         &-subtitle {
-            @include font-menu-card ('Roboto', 300, 14px);
+            @include font-menu-card ('Roboto', 300, 15px);
             @include ellipsis;
             margin: 0;
+            width: calc(100% - 50px);
         }
 
         &-price {
@@ -139,6 +157,7 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
+                padding-left: 4px;
                 padding: 4px;
                 transition: transform 600ms ease-in-out;
             }
@@ -147,12 +166,12 @@
         &:hover {
             .card-menu {
                 &-legend {
-                    width: 65%;
-
+                    width: calc(100% - 130px);
                 }
 
                 &-price-container {
                     transform: translateX(-64px);
+                    
                 }
             }
 

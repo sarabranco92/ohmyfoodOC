@@ -6,24 +6,6 @@
     flex-wrap: $flex-wrap;
 }
 
-/* changer les size pour les breakpoints
-
-@mixin main-typography {
-	font-family: "Roboto", serif;
-	font-size: map-get($font-size, mobile);
-	@include tablet-breakpoint {
-		font-size: map-get($font-size, tablet);
-	}
-	@include desktop-breakpoint {
-		font-size: map-get($font-size, desktop);
-	}
-}
-
-@mixin title-typography {
-	font-family: "Shrikhand", serif;
-}
-
-
 
 /*breakpoints*/
 
@@ -40,8 +22,11 @@
 }
 
 
+/*menu-animation*/
 
-
+@mixin menu-appear($delay: 0ms) {
+	animation: menu-appear 1000ms $delay both ease-in-out; 
+}
 
         
 

@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     background-color: #353535;
-    @include flexbox (center, 0, column);
+    @include flexbox (center, normal, column);
 
     & a {
         color: white;
