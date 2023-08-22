@@ -3,39 +3,57 @@
     background-color: #353535;
     @include flexbox (center, normal, column);
 
+
+    @include tablet-breakpoint {
+        height: 114px;
+        @include flexbox (flex-end, normal, column);
+    }
+
+    @include desktop-breakpoint {
+      height: 114px;
+      @include flexbox (flex-end, normal, column);
+    }
+
     & a {
         color: white;
-        
+
     }
 
     &-total {
         display: inline;
         padding: 22px 25px 22px 25px;
         width: auto;
-       
+
 
 
         & .logo {
-            
+
             @include font-menu-card ('shrikhand', 400, 20px);
             color: white;
             margin: 15px 30px 0 0;
-           
-            
+            @include tablet-breakpoint {
+                margin: 0;
+            }
+        
+            @include desktop-breakpoint {
+                margin: 0;
+            }
+
+
         }
 
         &-links {
             display: inline-flex;
             flex-direction: column;
             width: auto;
-        
-        @include tablet-breakpoint {
-            @include flexbox(space-around, center, row);
-        }
-    
-        @include desktop-breakpoint {
-            @include flexbox(space-around, center, row);
-        }
+
+            @include tablet-breakpoint {
+                @include flexbox(space-around, center, row);
+            }
+
+            @include desktop-breakpoint {
+                @include flexbox(space-around, center, row);
+            }
         }
 
         &-link {
@@ -55,16 +73,22 @@
                 font-size: 16px;
                 font-weight: 400;
             }
+
             @include tablet-breakpoint {
                 margin-left: 35px;
-                }
+            }
+
+            @include desktop-breakpoint {
+                margin-left: 35px;
+            }
         }
+
         @include tablet-breakpoint {
-            @include flexbox(space-between,center,row-reverse);
+            @include flexbox(space-between, center, row-reverse);
         }
-    
+
         @include desktop-breakpoint {
-            @include flexbox(space-between,center,row-reverse);
+            @include flexbox(space-between, center, row-reverse);
         }
     }
 

@@ -77,7 +77,7 @@
 
 
     .menu-animation {
-             @include tablet-breakpoint {
+        @include tablet-breakpoint {
             @include flexbox(space-between, stretch, column);
             width: 80%;
         }

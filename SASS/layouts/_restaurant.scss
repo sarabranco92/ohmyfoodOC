@@ -5,7 +5,7 @@
        
     }
     background: #f6f6f6;
-    padding: 30px; 
+    padding: 1% 5% ; 
 }
 
 .restaurant {
@@ -14,10 +14,10 @@
     }
 
     &-card {
-        width: 90%;
+        width: 100%;
         border-radius: 20px;
         box-shadow: $box-shadow;
-        margin-bottom: 35px;
+        margin-bottom: 20px;
         transition: transform 300ms ease-out;
         position: relative;
         
@@ -88,9 +88,7 @@
 .heart {
     @include flexbox (center, center, row);
     margin-right: 20px;
-    position: relative;
-
-    
+    position: relative;    
 
     i {
         font-size: x-large;
@@ -104,15 +102,15 @@
         -webkit-background-clip : text;
         color: transparent;
         transform: scale(0);
-        transition: transform 300ms;
+        transition: 0.4s ease;
     }
 
     &:hover
      {
 
         .heart-full {
-            transform: scale(1);
-
+            transform: scale(1.1);
+            cursor:pointer;
         }
 
     }
