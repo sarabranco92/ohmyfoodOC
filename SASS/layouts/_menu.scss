@@ -6,17 +6,6 @@
 }
 
 
-.animation1 {
-	@include menu-appear;
-}
-
-.animation2 {
-	@include menu-appear(1500ms);
-}
-
-.animation3 {
-	@include menu-appear(3000ms);
-}
 
 
 .restaurant-menu {
@@ -102,6 +91,7 @@
 
     .card-menu {
         overflow: hidden;
+      
 
         &-container {
             margin-bottom: 40px;
@@ -109,8 +99,8 @@
 
         &-legend {
             padding: 12px;
-           
-            transition: width 500ms 100ms ease-in-out;
+           max-width: calc(100% - 30px);
+            transition: max-width .5s ease-in-out;
             margin: 0;
         }
 
@@ -134,7 +124,7 @@
                 top: 0;
                 right: -64px;
                 height: 100%;
-                transition: transform 500ms 100ms ease-in-out;
+                transition: transform .5s .1s ease-in-out;
             }
 
             @include font-menu-card-price;
@@ -166,7 +156,7 @@
         &:hover {
             .card-menu {
                 &-legend {
-                    width: calc(100% - 130px);
+                    max-width: calc(100% - 130px);
                 }
 
                 &-price-container {

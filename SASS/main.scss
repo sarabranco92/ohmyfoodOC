@@ -4,7 +4,7 @@
 @import "./layouts/header";
 @import "./layouts/restaurant";
 @import "./layouts/footer";
-@import "./utlis/keyframes";
+@import "./utlis/animation";
 
 
 
@@ -34,32 +34,6 @@ img {
     height: auto;
 }
 
-.main {
- 
-    @include flexbox (center, center, column);
-}
-
-.loader {
-	animation: loader-rotate 1s infinite linear; /* L'animation s'effectue à vitesse constante*/
-	border-radius: 50%;
-	border: 16px solid $color-secondary;
-	border-left: 16px solid $color-primary;
-	width: 160px;
-	height: 160px;
-	&-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: fixed; /* Pour que le loadeur soit toujours à la meme position sur l'écran */
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: adjust-color($color-tertiary, $alpha: -0.6);
-		animation: loader-container forwards 2s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
-		z-index: 99;
-	}
-}
 
 
 .location {

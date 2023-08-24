@@ -7,18 +7,6 @@
   height: 383px;
 }
 
-.animation1 {
-  animation: menu-appear 1000ms 0ms both ease-in-out;
-}
-
-.animation2 {
-  animation: menu-appear 1000ms 1500ms both ease-in-out;
-}
-
-.animation3 {
-  animation: menu-appear 1000ms 3000ms both ease-in-out;
-}
-
 .restaurant-menu {
   background-color: #f6f6f6;
 }
@@ -131,7 +119,8 @@
 }
 .restaurant-menu .card-menu-legend {
   padding: 12px;
-  transition: width 500ms 100ms ease-in-out;
+  max-width: calc(100% - 30px);
+  transition: max-width 0.5s ease-in-out;
   margin: 0;
 }
 .restaurant-menu .card-menu-title {
@@ -169,7 +158,7 @@
   top: 0;
   right: -64px;
   height: 100%;
-  transition: transform 500ms 100ms ease-in-out;
+  transition: transform 0.5s 0.1s ease-in-out;
 }
 .restaurant-menu .card-menu-price-check {
   background-color: #99E2D0;
@@ -189,7 +178,7 @@
   transition: transform 600ms ease-in-out;
 }
 .restaurant-menu .card-menu:hover .card-menu-legend {
-  width: calc(100% - 130px);
+  max-width: calc(100% - 130px);
 }
 .restaurant-menu .card-menu:hover .card-menu-price-container {
   transform: translateX(-64px);
@@ -236,7 +225,7 @@
   bottom: 30px;
   left: 30px;
   color: #353535;
-  transition: opacity 300ms ease-in-out, transform 200ms ease-in-out;
+  transition: opacity 300ms ease-in-out, transform 0.2s ease-in-out;
   font-size: 125%;
   display: flex;
   justify-content: center;
@@ -257,10 +246,15 @@
   font-weight: 700;
   font-size: 24px;
 }
+@media (min-width: 1600px) {
+  .restaurants {
+    padding: 1% 20%;
+  }
+}
 
 .restaurant-cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -269,19 +263,19 @@
   width: 100%;
   border-radius: 20px;
   box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   transition: transform 300ms ease-out;
   position: relative;
 }
 @media (min-width: 768px) {
   .restaurant-card {
-    width: 49%;
+    width: 47%;
     position: sticky;
   }
 }
 @media (min-width: 1200px) {
   .restaurant-card {
-    width: 49%;
+    width: 47%;
     position: sticky;
   }
 }
@@ -340,6 +334,7 @@
 }
 .heart i {
   font-size: x-large;
+  color: black;
 }
 .heart .heart-full {
   position: absolute;
@@ -502,6 +497,28 @@
     transform: rotate(2turn);
   }
 }
+.loader {
+  animation: loader-rotate 1s infinite linear; /* L'animation s'effectue à vitesse constante*/
+  border-radius: 50%;
+  border: 16px solid #FF79DA;
+  border-left: 16px solid #9356DC;
+  width: 160px;
+  height: 160px;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Pour que le loadeur soit toujours à la meme position sur l'écran */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: loader-container forwards 1.5s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
+  z-index: 99;
+}
+
 /* <= Animation de rotation du loader */
 /* Animation d'apparition des parties des menus */
 @keyframes menu-appear {
@@ -514,6 +531,18 @@
     transform: translateX(0);
   }
 }
+.animation1 {
+  animation: menu-appear 1000ms 0ms both ease-in-out;
+}
+
+.animation2 {
+  animation: menu-appear 1000ms 800ms both ease-in-out;
+}
+
+.animation3 {
+  animation: menu-appear 1000ms 1400ms both ease-in-out;
+}
+
 /*  Animation d'apparition des parties des menus */
 body {
   font-family: "Roboto", sans-serif;
@@ -532,36 +561,6 @@ h1 {
 img {
   width: 100%;
   height: auto;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.loader {
-  animation: loader-rotate 1s infinite linear; /* L'animation s'effectue à vitesse constante*/
-  border-radius: 50%;
-  border: 16px solid #FF79DA;
-  border-left: 16px solid #9356DC;
-  width: 160px;
-  height: 160px;
-}
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed; /* Pour que le loadeur soit toujours à la meme position sur l'écran */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(153, 226, 208, 0.4);
-  animation: loader-container forwards 2s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
-  z-index: 99;
 }
 
 .location {

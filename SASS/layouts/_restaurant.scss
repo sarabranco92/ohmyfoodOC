@@ -1,34 +1,37 @@
 .restaurants {
-
     &-title {
         @include font-menu-card ('Roboto', 700, 24px);
        
     }
     background: #f6f6f6;
-    padding: 1% 5% ; 
+    padding: 1% 5%; 
+
+    @include big-desktop-breakpoint {
+        padding: 1% 20% ;
+    }
 }
 
 .restaurant {
     &-cards {
-        @include flexbox (space-around, center, row);
+        @include flexbox (space-between, center, row);
     }
 
     &-card {
         width: 100%;
         border-radius: 20px;
         box-shadow: $box-shadow;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         transition: transform 300ms ease-out;
         position: relative;
         
 
         @include tablet-breakpoint {
-            width: 49%;
+            width: 47%;
             position: sticky;
         }
 
         @include desktop-breakpoint {
-            width: 49%;
+            width: 47%;
             position: sticky
         }
 
@@ -92,6 +95,7 @@
 
     i {
         font-size: x-large;
+        color: black;
     }
    
 
