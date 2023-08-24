@@ -84,11 +84,11 @@
         }
 
         @include tablet-breakpoint {
-            @include flexbox(space-between, center, row-reverse);
+            @include flexbox(space-around, center, row-reverse);
         }
 
         @include desktop-breakpoint {
-            @include flexbox(space-between, center, row-reverse);
+            @include flexbox(space-around, center, row-reverse);
         }
     }
 

@@ -56,7 +56,7 @@ img {
 		width: 100%;
 		height: 100%;
 		background: adjust-color($color-tertiary, $alpha: -0.6);
-		animation: loader-container forwards 3s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
+		animation: loader-container forwards 2s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
 		z-index: 99;
 	}
 }

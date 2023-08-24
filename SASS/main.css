@@ -260,7 +260,7 @@
 
 .restaurant-cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -462,7 +462,7 @@
 @media (min-width: 768px) {
   .footer-total {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -471,7 +471,7 @@
 @media (min-width: 1200px) {
   .footer-total {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -493,18 +493,17 @@
     transform: scale(0); /* Pour que le loadeur disparaisse à la fin de l'animation */
   }
 }
-/* <= Animation du fond du loader */
-/* Animation de rotation du loader => */
+/* Animation de rotation du loader  */
 @keyframes loader-rotate {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(1turn);
+    transform: rotate(2turn);
   }
 }
 /* <= Animation de rotation du loader */
-/* Animation d'apparition des parties des menus => */
+/* Animation d'apparition des parties des menus */
 @keyframes menu-appear {
   from {
     opacity: 0;
@@ -515,7 +514,7 @@
     transform: translateX(0);
   }
 }
-/* <= Animation d'apparition des parties des menus */
+/*  Animation d'apparition des parties des menus */
 body {
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
@@ -561,7 +560,7 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(153, 226, 208, 0.4);
-  animation: loader-container forwards 3s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
+  animation: loader-container forwards 2s; /* La cible retiendra les valeurs calculées définies lors de la dernière étape */
   z-index: 99;
 }
 

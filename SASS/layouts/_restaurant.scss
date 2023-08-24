@@ -10,7 +10,7 @@
 
 .restaurant {
     &-cards {
-        @include flexbox (space-between, center, row);
+        @include flexbox (space-around, center, row);
     }
 
     &-card {

@@ -16,21 +16,20 @@
 		transform: scale(0); /* Pour que le loadeur disparaisse à la fin de l'animation */
 	}
 }
-/* <= Animation du fond du loader */
 
-/* Animation de rotation du loader => */
+/* Animation de rotation du loader  */
 @keyframes loader-rotate {
 	from {
 		transform: rotate(0deg);
 	}
 	to {
-		transform: rotate(1turn);
+		transform: rotate(2turn);
 	}
 }
 /* <= Animation de rotation du loader */
 
 
-/* Animation d'apparition des parties des menus => */
+/* Animation d'apparition des parties des menus */
 @keyframes menu-appear {
 	from {
 		opacity: 0;
@@ -41,4 +40,4 @@
 		transform: translateX(0);
 	}
 }
-/* <= Animation d'apparition des parties des menus */
+/*  Animation d'apparition des parties des menus */
