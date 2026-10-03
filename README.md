@@ -31,3 +31,7 @@ Le projet se concentre sur la création d'un site responsive, conçu en "mobile 
 - **Intégration web :** Capacité à transformer des maquettes en une interface web fonctionnelle en "mobile first".
 - **Animations CSS :** Compétence dans la création d'animations CSS interactives et attrayantes.
 - **Versioning avec Git et GitHub :** Utiliser Git et GitHub pour le suivi des versions et la collaboration.
+
+## Setup and maintenance guide
+
+See the [project guide](docs/PROJECT_GUIDE.md) for repository-specific setup, commands, configuration, implementation limits and verification steps.
